@@ -1,0 +1,36 @@
+@import "vars";
+@import "mixin";
+.button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: rem(54);
+    height: em(48);
+    width: em(147);
+    font-weight: 700;
+font-size: rem(14);
+letter-spacing: -0.02em;
+text-transform: uppercase;
+@media (max-width: em(997)) and (min-width: em(767)) {
+        @include adaptiv-value(font-size, 14, 6);
+}
+}
+.button-white{
+    color: $colorblue;
+background-color: #fff;
+}
+.button-green{
+    color: #fff;
+    background-color: $colorGreen;
+}
+.button-white:hover{
+    color: #fff;
+    background-color: $colorblue;
+    transition: all 0.5s ease;
+}
+.button-green:hover{
+    color: #fff;
+    background-color: $colorGreen;
+    opacity: 0.8;
+    transition: all 0.5s ease;
+}

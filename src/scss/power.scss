@@ -1,0 +1,113 @@
+@import "mixin";
+@import "vars";
+@import "button";
+
+.power {
+    max-width: 1800px;
+    margin: 0 auto;
+   
+
+    &__background {
+        position: relative;
+        z-index: 1;
+        // width: 100vw;
+    }
+
+    &__background-img img {
+        position: absolute;
+top: 0;
+right: 0;
+// width: 68%;
+    }
+    &__background-img:nth-child(2) img{
+        z-index: 3;
+    }
+    &__background-img:nth-child(3) img{
+        z-index: 2;
+    }
+    &__background-img:nth-child(4) img{
+        z-index: 1;
+    }
+
+
+    &__wrapper {
+        display: flex;
+        // justify-content: center;
+        align-items: center;
+        position: relative;
+        max-width: $widthContent;
+        margin: 0 auto;
+        display: flex;
+        padding-top: em(100);
+        z-index: 9;
+        padding: 0px em(30) 0px em(30);
+        @media (max-width:$breakpoint768) {
+            padding: em(75) em(30) 0px em(30);
+            flex-direction: column;
+            overflow: hidden;
+        }
+        @media (min-width:1719px) {
+            padding: em(75) em(0) 0px em(30);
+            
+        }
+    }
+
+    &__left {
+    //     display: flex;
+    // flex-direction: column;
+    // gap: 15px;
+    flex: 50%;
+    }
+&__content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: em(550);
+    @media (max-width:$breakpoint768) {
+align-items: center;
+text-align: center;
+    }
+}
+    &__topic {
+        color: #2278D4;
+        @media(min-width:em(1500)) {
+            font-size: rem(18);
+        }
+        @include adaptiv-value("font-size", 18, 14);
+line-height: rem(54);
+    }
+
+    &__title {
+        @media(min-width:em(1500)) {
+            font-size: rem(48);
+        }
+        @include adaptiv-value("font-size", 48, 28)
+    }
+
+    
+
+    &__button {
+        @media(min-width:em(1500)) {
+            font-size: rem(14);
+        }
+        @include adaptiv-value("font-size", 14, 12)
+    }
+
+    &__right {
+        display: flex;
+        flex: 50%;
+        @media (max-width:$breakpoint768) {
+transform: translate(25%, 0);    
+padding-top: em(50);   
+ }
+    }
+    &__img2 {
+    }
+    
+    &__img img {
+        width: 114.5%;
+        height: auto;
+        
+    }
+   
+}

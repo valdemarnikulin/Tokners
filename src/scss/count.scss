@@ -1,0 +1,119 @@
+@import "mixin";
+@import "vars";
+
+.count {
+    max-width: em(1800);
+    margin: 0 auto;
+    position: relative;
+    &__wrapper {
+        max-width: $widthContent;
+        padding: em(0) em(30);
+        transform: translate(0, 60%);
+        @media (min-width:1250px) {
+            @include adaptiv-value("padding-top", 150, 30);
+        }
+        @media (max-width: $breakpoint768) {
+            // @include adaptiv-value("padding-top", 50, 20)
+        }
+        margin: 0 auto;
+    }
+
+    &__years {
+display: grid;
+grid-template: 1fr/repeat(4,1fr);
+position: relative;
+    }
+    &__list {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(em(250), 1fr));
+position: relative;
+gap: em(20);
+    }
+
+    &__column {
+        display: flex;
+        flex-direction: column;
+        gap: em(10);
+    }
+    &__column-fly {
+        position: absolute;
+        top: -138%;
+        right: 0;
+        
+    }
+    &__column-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    &__circle{
+        width: rem(9);
+        height: rem(9);
+        border-radius: 50%;
+        background-color: $colorGreen;
+    }
+    &__column-year {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-around;
+        flex-direction: column;
+        width: 70%;
+        z-index: 5;
+    }
+
+    &__title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    &__topic {
+        font-weight: 700;
+        line-height: rem(54);
+        color: $colorGreen;
+        
+        @media(min-width:em(1500)) {
+            font-size: rem(16);
+        }
+        @include adaptiv-value("font-size", 16, 12)
+    }
+
+    &__year {
+        @media(min-width:em(1500)) {
+            font-size: rem(36);
+        }
+        @include adaptiv-value("font-size", 36, 24)
+    }
+    &__fly {
+        position: relative;
+        padding: 0px 25vw 0px 0px;
+    }
+    &__fly img {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(5%, 5%);
+    }
+
+    &__line img {
+        width: 80%;
+    }
+    &__line {
+padding: em(0) em(0) em(50) em(2);
+
+}    
+    &__item {
+        display: flex;
+        align-items: flex-start;
+        justify-content:flex-start;
+        gap: em(20);
+    }
+    &__number {
+        color: $colorLightBlue;
+        font-weight: 700;
+font-size: rem(12);
+line-height: rem(20);
+    }
+}

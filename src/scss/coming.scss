@@ -1,0 +1,135 @@
+@import "vars";
+@import "mixin";
+
+.coming {
+    max-width: 1800px;
+    margin: 0 auto;
+    position: relative;
+    &__background-image{
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%,15%);
+        z-index: 3;
+        @media (min-width:974px) {
+            
+            transform: translate(-50%,13%);
+        }
+        @media (max-width:$breakpoint768) {
+            
+            transform: translate(-50%,18%);
+        }
+    }
+    &__background-image img{
+        width: 1800px;
+        @media (min-width:974px) and  (max-width:1615px) {
+            width: 1615px;
+        }
+        
+    }
+    &__wrapper {
+        transform: translate(0px,20%);
+        position: relative;
+        z-index: 3;
+        max-width: $widthContent;
+        padding: em(250) em(30) em(0) em(30);
+        margin: 0 auto;
+        @media (min-width:$breakpoint768) {
+            transform: translate(0,28%);
+        }
+        @media (max-width:$breakpoint425) {
+            transform: translate(0,10%);
+            
+        }
+    }
+   
+
+    &__content {
+        display: flex;
+        @include adaptiv-value("gap", 150, 50);
+        padding: 0px 0px em(200) 0px;
+        @media (max-width: $breakpoint768) {
+            flex-direction: column;
+            text-align: center;
+            padding: em(100) 0px em(0) 0px;
+        }
+        @media (max-width:$breakpoint425) {
+            transform: translate(0,em(150))
+        }
+    }
+
+    &__left {
+        z-index: 3;
+        flex: 50%;
+    }
+
+    &__title {
+        @include adaptiv-value("font-size", 36,24);
+        @include adaptiv-value("line-height", 54,36);
+        color: $colorblue;
+        font-weight: 500;
+    }
+
+    &__subtitle {
+        @include adaptiv-value("padding-top", 40, 20);
+    }
+    
+    &__text p{
+        padding: em(10) 0px 0px 0px;
+    }
+    &__right {
+        position: relative;
+        flex: 50%;
+        z-index: 3;
+        @media (max-width:$breakpoint768) {
+            display: flex;
+        }
+    }
+
+    &__cloud-small {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(12%, 35%);
+        @media (max-width: $breakpoint768) {
+            position: relative;
+            transform: translate(0%,0%);
+    }
+        
+    }
+&__cloud-small img {
+    width: 50%;
+    @media (max-width:$breakpoint768) {
+        width: 100%;
+    }
+}
+    &__rocket {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(-25%, 25%);
+        @media (max-width: $breakpoint768) {
+            position: relative;
+            transform: translate(0%,0%);
+        }
+    }
+&__rocket img {
+    width: 100%;
+}
+    &__cloud {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        transform: translate(26%,-40%);
+        @media (max-width: $breakpoint768) {
+            position: relative;
+            transform: translate(0%,0%);
+        }
+    }
+    &__cloud img {
+        width: 80%;
+@media (max-width:$breakpoint768) {
+    width: 100%;
+}
+    }
+}

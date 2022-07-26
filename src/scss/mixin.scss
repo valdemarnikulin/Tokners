@@ -1,0 +1,40 @@
+@use 'sass:math';
+
+$maxWidth: 1575;
+@mixin adaptiv-value($property, $pcSize, $mobSize) {
+    $addSize: $pcSize - $mobSize;
+    $maxWidth: $maxWidth - 320;
+    #{$property}: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}
+@mixin adaptiv-value-viewport($property, $pcSize, $mobSize) {
+    $addSize: $pcSize - $mobSize;
+    $maxWidth: $maxWidth - 320;
+    #{$property}: calc(#{$mobSize + vw} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}
+@mixin adaptiv-padmar($property, $pcSizeTop, $pcSizeLeft, $mobSizeTop, $mobSizeLeft) {
+    $addSizeTop: $pcSizeTop - $mobSizeTop;
+    $addSizeLeft: $pcSizeLeft - $mobSizeLeft;
+    $maxWidth: $maxWidth - 320;
+    #{$property}-top: calc(#{$mobSizeTop + px} + #{$addSizeTop} * ((100vw - 320px) / #{$maxWidth}));
+    #{$property}-bottom: calc(#{$mobSizeTop + px} + #{$addSizeTop} * ((100vw - 320px) / #{$maxWidth}));
+    #{$property}-left: calc(#{$mobSizeLeft + px} + #{$addSizeLeft} * ((100vw - 320px) / #{$maxWidth}));
+    #{$property}-right: calc(#{$mobSizeLeft + px} + #{$addSizeLeft} * ((100vw - 320px) / #{$maxWidth}));
+}
+
+//To %
+@function prc($pxOne, $pxTwo) {
+    $result: math.div($pxOne, $pxTwo) * 100%;
+    @return $result;
+}
+//To rem
+@function rem($px) {
+    $result: math.div($px, 16) + rem;
+    @return $result;
+}
+//To em
+@function em($px) {
+    $result: math.div($px, 16) + em;
+    @return $result;
+}
+
+//exapmle .title{ font-size: rem(42)}

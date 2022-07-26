@@ -1,0 +1,111 @@
+@import "mixin";
+@import "vars";
+.prof {
+    position: relative;
+    max-width: 1800px;
+    margin: 0 auto;
+    overflow: hidden;
+    
+    &__img-background img {
+        width: 100%;
+    }
+    
+&__img-background{
+    position: absolute;
+    left: -40%;
+    bottom: 0;
+    z-index: 0;
+    transform: translate(13%, 40%);
+}
+// background: url(../img/Vector-top.png) center 0 no-repeat;
+// background-size: 100vw;
+
+    &__wrapper {
+        display: flex;
+        @media (max-width: $breakpoint768) {
+            flex-direction: column;
+            
+            padding: em(100) em(30) 0 em(30);
+        }
+        padding: em(100) em(30) 0 em(30);
+        gap: em(20);
+        max-width:$widthContent;
+        margin: 0 auto;
+    }
+
+    &__person {
+        z-index: 10;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        flex: 50%;
+        text-align: center;
+        padding: 0 em(64);
+        background: rgba(242, 240, 244, 0.5);
+        border-radius: 25px;
+        border: 2px solid #22A75D;
+        @media (max-width: $breakpoint768) {
+            padding: 0 em(10);
+            
+}
+    }
+
+    &__count {
+        padding: em(40) 0;
+        @include adaptiv-padmar("padding", 40, 0, 20, 0)
+    }
+
+    &__title {
+        font-weight: 500;
+// font-size: rem(36);
+line-height: 150%;
+color: #191B21;
+@media(min-width:em(1500)) {
+    font-size: rem(36);
+}
+@include adaptiv-value("font-size", 36, 24)
+
+    }
+    &__title {
+       
+        // color: #22A75D;
+    }
+
+    &__subtitle {
+        @include adaptiv-padmar("padding", 30, 0, 10, 0);
+        // padding: em(30) 0 0 0;
+        flex: 1 0 auto;
+    }
+
+    &__img {
+        flex: 0 0 auto;
+    }
+    &__img img {
+        transform: translate(25%, 0px);
+        width: 100%;
+        height: auto;
+    }
+    &__img-creator {
+        transform: translate(10%, 0px);
+        flex: 0 0 auto;
+        // position: absolute;
+        // bottom: 0;
+    }
+    &__img-creator img {
+        width: 100%;
+        height: auto;
+    }
+    &__hodlers {
+        flex: 50%;
+    }
+}
+.blue {
+    color: #2278D4;
+    text-decoration: underline;
+}
+.green {
+    color: #22A75D;
+    text-decoration: underline;
+}
